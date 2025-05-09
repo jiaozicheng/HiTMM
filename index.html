@@ -25,7 +25,7 @@
 
 
   <title>HiTMM: Generative Temporal Masked Modeling of Human Interactive Motions</title>
-  <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+  <link rel="icon" href="data:,">
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
   rel="stylesheet">
 
@@ -67,7 +67,7 @@
       const nextBtn = document.querySelector('.carousel-next');
       
       const itemWidth = 33.333;
-      const realItemCount = 4;
+      const realItemCount = 8; // 改为8个视频
       let currentIndex = 3;
       let isAnimating = false;
       let transitionEndHandler = null;
@@ -260,7 +260,7 @@
 </section>
 
 <!-- Paper abstract -->
-<section class="section hero is-light">
+<section>
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -280,7 +280,7 @@
 
 
 <!-- Paper apporoach -->
-<section class="section hero is-light">
+<section>
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -327,41 +327,69 @@
 
 
 
-<section class="section hero is-light">
+<section>
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Gallery of Generation</h2>
       <div class="carousel-container">
         <!-- 轮播轨道 - 修改为动态生成克隆项 -->
         <div class="carousel-track">
-          <!-- 原始4个视频（保持唯一ID或data属性便于识别） -->
+          <!-- 原始8个视频（保持唯一ID或data属性便于识别） -->
           <div class="carousel-item" data-original-index="1">
-            <video controls style="width:100%;">
-              <source src="static/videos/1.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">First video description.</h2>
+            <h2 class="subtitle has-text-centered">They acknowledge each other's presence with a polite greeting.</h2>
           </div>
           <div class="carousel-item" data-original-index="2">
-            <video controls style="width:100%;">
-              <source src="static/videos/2.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">Second video description.</h2>
+            <h2 class="subtitle has-text-centered">These two people kick each other's calves.</h2>
           </div>
           <div class="carousel-item" data-original-index="3">
-            <video controls style="width:100%;">
-              <source src="static/videos/3.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">Third video description.</h2>
+            <h2 class="subtitle has-text-centered">Two humans take a step back and prepare for the assault.</h2>
           </div>
           <div class="carousel-item" data-original-index="4">
-            <video controls style="width:100%;">
-              <source src="static/videos/4.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/4.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">Fourth video description.</h2>
+            <h2 class="subtitle has-text-centered">They initiate a dance routine that involves swaying shoulders and arms.</h2>
+          </div>
+          <div class="carousel-item" data-original-index="5">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/5.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="subtitle has-text-centered">These two people bow to each other.</h2>
+          </div>
+          <div class="carousel-item" data-original-index="6">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/6.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="subtitle has-text-centered">Both they approach each other while walking</h2>
+          </div>
+          <div class="carousel-item" data-original-index="7">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/7.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="subtitle has-text-centered">One person strikes the other with a sword and the other dodges.</h2>
+          </div>
+          <div class="carousel-item" data-original-index="8">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/8.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="subtitle has-text-centered">One tosses the ball to the other, and the other catches it.</h2>
           </div>
         </div>
         
@@ -369,12 +397,16 @@
         <button class="carousel-arrow carousel-prev" aria-label="Previous">❮</button>
         <button class="carousel-arrow carousel-next" aria-label="Next">❯</button>
         
-        <!-- 指示器 -->
+        <!-- 指示器 - 更新为8个点 -->
         <div class="carousel-nav" role="tablist">
           <button class="carousel-dot" data-index="0" aria-label="Slide 1" role="tab"></button>
           <button class="carousel-dot" data-index="1" aria-label="Slide 2" role="tab"></button>
           <button class="carousel-dot active" data-index="2" aria-label="Slide 3" role="tab"></button>
           <button class="carousel-dot" data-index="3" aria-label="Slide 4" role="tab"></button>
+          <button class="carousel-dot" data-index="4" aria-label="Slide 5" role="tab"></button>
+          <button class="carousel-dot" data-index="5" aria-label="Slide 6" role="tab"></button>
+          <button class="carousel-dot" data-index="6" aria-label="Slide 7" role="tab"></button>
+          <button class="carousel-dot" data-index="7" aria-label="Slide 8" role="tab"></button>
         </div>
       </div>
     </div>
@@ -382,7 +414,7 @@
 </section>
 
 
-<section class="section hero is-light">
+<section>
   <div class="hero-body">
     <div class="container">
       <h2 class="title is-3 has-text-centered">Comparisions</h2>
@@ -392,113 +424,113 @@
       <div class="gallery-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
         <!-- Videos replacing images -->
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/1.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/intergen/3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">InterGen</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/2.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/in2in/3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">in2IN</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/3.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/intermask/3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">InterMask</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/4.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/ours/3.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered"><strong>HiTMM</strong></h2>
         </div>
       </div>
       <br>
-      <h2 class="subtitle has-text-centered">First text description.</h2>
+      <h2 class="subtitle has-text-centered">Two people <strong>exchange</strong> greetings with a wave of the hand.</h2>
 
       <br>
       <br>
       <div class="gallery-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
         <!-- Videos replacing images -->
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/1.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/intergen/14.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">InterGen</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/2.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/in2in/14.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">in2IN</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/3.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/intermask/14.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">InterMask</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/4.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/ours/14.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered"><strong>HiTMM</strong></h2>
         </div>
       </div>
       <br>
-      <h2 class="subtitle has-text-centered">Second text description.</h2>
+      <h2 class="subtitle has-text-centered">Both they <strong>lower</strong> their arms.</h2>
 
       <br>
       <br>
       <div class="gallery-container" style="display: flex; flex-wrap: wrap; justify-content: center; gap: 20px;">
         <!-- Videos replacing images -->
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/1.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/intergen/23.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">InterGen</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/2.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/in2in/23.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">in2IN</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/3.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/intermask/23.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered">InterMask</h2>
         </div>
         <div class="gallery-item" style="flex: 1 1 200px; max-width: 300px;">
-          <video controls style="width: 100%; height: auto;">
-            <source src="static/videos/4.mp4" type="video/mp4">
+          <video controls autoplay muted loop style="width: 100%; height: auto;">
+            <source src="static/compare/ours/23.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
           <h2 class="subtitle has-text-centered"><strong>HiTMM</strong></h2>
         </div>
       </div>
       <br>
-      <h2 class="subtitle has-text-centered">Third text description.</h2>
+      <h2 class="subtitle has-text-centered">The first person greets the second by raising the <strong>right</strong> arm.</h2>
     </div>
   </div>
 </section>
 
-<section class="section hero is-light">
+<section>
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -514,18 +546,18 @@
           </h3>
           <br>
           <div class="column is-half">
-            <video controls style="width: 120%; max-height: 800px; object-fit: contain;">
-              <source src="static/videos/1.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width: 120%; max-height: 800px; object-fit: contain;">
+              <source src="static/edit/vis.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">The first video description.</h2>
+            <h2 class="subtitle has-text-centered">These two people approach each other while waving.</h2>
           </div>
           <div class="column is-half">
-            <video controls style="width: 120%; max-height: 800px; object-fit: contain;">
-              <source src="static/videos/2.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width: 120%; max-height: 800px; object-fit: contain;">
+              <source src="static/edit/vis1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">The second video description.</h2>
+            <h2 class="subtitle has-text-centered">Both they lower their arms.</h2>
           </div>
         </div>
         <br>
@@ -537,18 +569,18 @@
           </h3>
           <br>
           <div class="column is-half">
-            <video controls style="width: 120%; max-height: 800px; object-fit: contain;">
-              <source src="static/videos/1.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width: 120%; max-height: 800px; object-fit: contain;">
+              <source src="static/edit/vis.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">The first video description.</h2>
+            <h2 class="subtitle has-text-centered">These two people approach each other while waving.</h2>
           </div>
           <div class="column is-half">
-            <video controls style="width: 120%; max-height: 800px; object-fit: contain;">
-              <source src="static/videos/2.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width: 120%; max-height: 800px; object-fit: contain;">
+              <source src="static/edit/vis2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">The second video description.</h2>
+            <h2 class="subtitle has-text-centered">The first person raises the right leg aggressively towards the second.</h2>
           </div>
         </div>
         <br>
@@ -560,18 +592,18 @@
           </h3>
           <br>
           <div class="column is-half">
-            <video controls style="width: 120%; max-height: 800px; object-fit: contain;">
-              <source src="static/videos/1.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width: 120%; max-height: 800px; object-fit: contain;">
+              <source src="static/edit/vis.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">The first video description.</h2>
+            <h2 class="subtitle has-text-centered">These two people approach each other while waving.</h2>
           </div>
           <div class="column is-half">
-            <video controls style="width: 120%; max-height: 800px; object-fit: contain;">
-              <source src="static/videos/2.mp4" type="video/mp4">
+            <video controls autoplay muted loop style="width: 120%; max-height: 800px; object-fit: contain;">
+              <source src="static/edit/vis3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">The second video description.</h2>
+            <h2 class="subtitle has-text-centered">Two person bow to each other.</h2>
           </div>
         </div>
       </div>
