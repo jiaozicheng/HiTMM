@@ -267,7 +267,7 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We have recently seen some progress in the current field of human-human interaction generation. However, these models typically employ two independent timelines by directly concatenating them when generating motions involving two individuals. This design overlooks the temporal dependencies between motions at each timestep, often resulting in generated motions that appear unrealistic and unnatural. Furthermore, the limited availability of interactive motion data poses great challenges for motion generation. In this work, we propose <strong>HiTMM</strong>, a novel framework for Human interaction generation based on Temporal Masked Modeling. HiTMM first decomposes the human interaction into two separate single-person motions. Individual motions within the interaction belong to the same type, allowing them to be mapped to a shared latent space via a single RVQ-VAE model that generates multi-layer discrete tokens. We then arrange all tokens of the two interacting individuals along a shared timeline. Subsequently, we employ a masked transformer and a residual transformer to model the base-layer and rest-layer motion tokens. Note that both the base-layer and rest-layer motion tokens are arranged along a single timeline. Notably, our model utilizes a shared temporal representation, making it the first capable of performing temporal inpainting on specific regions within human interaction sequences. Experimental results show that our model achieves an FID of <strong>4.688</strong> on the InterHuman dataset, surpassing the current state-of-the-art model (vs 5.154 for InterMask), and an FID of <strong>0.371</strong> on the InterX dataset (vs 0.399 for InterMask).
+            We have recently seen some progress in the current field of human-human interaction generation. However, these models typically employ two independent timelines by directly concatenating them when generating motions involving two individuals. This design overlooks the temporal dependencies between motions at each timestep, often resulting in generated motions that appear unrealistic and unnatural. Furthermore, the limited availability of interactive motion data poses great challenges for motion generation. In this work, we propose <strong>HiTMM</strong>, a novel framework for Human interaction generation based on Temporal Masked Modeling. HiTMM first decomposes the human interaction into two separate single-person motions. Individual motions within the interaction belong to the same type, allowing them to be mapped to a shared latent space via a single RVQ-VAE model that generates multi-layer discrete tokens. We then arrange all tokens of the two interacting individuals along a shared timeline. Subsequently, we employ a masked transformer and a residual transformer to model the base-layer and rest-layer motion tokens. Both the base-layer and rest-layer motion tokens are arranged along a single timeline. Note that, our model utilizes a shared temporal representation, making it capable of performing temporal editing on specific regions within human interaction sequences. Experimental results show that our model achieves an FID of <strong>4.688</strong> on the InterHuman dataset, surpassing the current state-of-the-art model (vs 5.154 for InterMask), and an FID of <strong>0.371</strong> on the InterX dataset (vs 0.399 for InterMask).
           </p>
           
         </div>
@@ -375,18 +375,11 @@
               <source src="static/gallery/6.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">Both they approach each other while walking</h2>
+            <h2 class="subtitle has-text-centered">One person strikes the other with a sword and the other dodges.</h2>
           </div>
           <div class="carousel-item" data-original-index="7">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/7.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-            <h2 class="subtitle has-text-centered">One person strikes the other with a sword and the other dodges.</h2>
-          </div>
-          <div class="carousel-item" data-original-index="8">
-            <video controls autoplay muted loop style="width:100%;">
-              <source src="static/gallery/8.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
             <h2 class="subtitle has-text-centered">Two humans take a step back and prepare for the assault.</h2>
@@ -406,7 +399,6 @@
           <button class="carousel-dot" data-index="4" aria-label="Slide 5" role="tab"></button>
           <button class="carousel-dot" data-index="5" aria-label="Slide 6" role="tab"></button>
           <button class="carousel-dot" data-index="6" aria-label="Slide 7" role="tab"></button>
-          <button class="carousel-dot" data-index="7" aria-label="Slide 8" role="tab"></button>
         </div>
       </div>
     </div>
