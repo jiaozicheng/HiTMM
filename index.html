@@ -245,7 +245,7 @@
     <div class="hero-body">
       <!-- 正确的图片标签用法 -->
       <img 
-        src="static/images/teaser_image.jpg" 
+        src="static/images/teaser_image.png" 
         alt="HiTMM Motion Generation Demo" 
         style="width: 100%; max-height: 600px; object-fit: contain;"
       >
@@ -267,7 +267,34 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            We have recently seen some progress in the current field of human-human interaction generation. However, these models typically employ two independent timelines by directly concatenating them when generating motions involving two individuals. This design overlooks the temporal dependencies between motions at each timestep, often resulting in generated motions that appear unrealistic and unnatural. Furthermore, the limited availability of interactive motion data poses great challenges for motion generation. In this work, we propose <strong>HiTMM</strong>, a novel framework for Human interaction generation based on Temporal Masked Modeling. HiTMM first decomposes the human interaction into two separate single-person motions. Individual motions within the interaction belong to the same type, allowing them to be mapped to a shared latent space via a single RVQ-VAE model that generates multi-layer discrete tokens. We then arrange all tokens of the two interacting individuals along a shared timeline. Subsequently, we employ a masked transformer and a residual transformer to model the base-layer and rest-layer motion tokens. Both the base-layer and rest-layer motion tokens are arranged along a single timeline. Note that, our model utilizes a shared temporal representation, making it capable of performing temporal editing on specific regions within human interaction sequences. Experimental results show that our model achieves an FID of <strong>4.688</strong> on the InterHuman dataset, surpassing the current state-of-the-art model (vs 5.154 for InterMask), and an FID of <strong>0.371</strong> on the InterX dataset (vs 0.399 for InterMask).
+            We have recently seen some progress in the current
+field of human-human interaction generation. However, directly
+generating complex two-person interactive motions remains a
+significant challenge. Meanwhile, these models typically employ
+two independent timelines when generating motions for inter-
+active scenarios involving two individuals. This design overlooks
+the temporal dependencies between motions at each timestep and
+fails to account for the roles of active and reactive participants
+during the generation process, often resulting in unrealistic and
+unnatural motions. In this work, we propose <strong>HiTMM</strong>, a novel
+framework for Human interaction generation based on Temporal
+Masked Modeling. HiTMM first decomposes the human interac-
+tion into two separate single-person motions. Individual motions
+within the interaction belong to the same type, enabling them
+to be mapped to a shared latent space through a coarse-to-fine
+approach that generates multi-layer discrete tokens. We then
+arrange all tokens of the two interacting individuals along a
+shared timeline. Subsequently, we employ a masked transformer
+and a residual transformer to model the base-layer and rest-layer
+motion tokens. Both the base-layer and rest-layer motion tokens
+are arranged along a single timeline, allowing the model to learn
+the role of the initially generated motion. Note that, our model
+utilizes a shared temporal representation, making it capable of
+performing temporal editing on specific regions within human
+interaction sequences. Experimental results show that our model
+achieves an FID of <strong>5.017</strong> on the InterHuman dataset, surpassing
+the current state-of-the-art model (vs 5.154 for InterMask), and
+an FID of <strong>0.373</strong> on the InterX dataset (vs 0.399 for InterMask).
           </p>
           
         </div>
@@ -288,7 +315,7 @@
         <h2 class="title is-3">Overall Architecture of HiTMM</h2>
         <br>
         <img 
-        src="static/images/model.jpg" 
+        src="static/images/model1.png" 
         alt="HiTMM Motion Generation Demo" 
         style="width: 100%; max-height: 800px; object-fit: contain;"
       >
@@ -299,7 +326,7 @@
             and <span style="font-family: 'KaTeX_Math', 'Times New Roman', serif; color: #1565c0;">\( t_b^{0:V} \)</span>. (b) The motion tokens in the base layer of two individuals are first cross-combined to obtain 
             <span style="font-family: 'KaTeX_Math', 'Times New Roman', serif;">\( t_{cross}^0 \)</span>,
             which is then masked and processed through the TMT for prediction. (c) The remaining tokens, <span style="font-family: 'KaTeX_Math', 'Times New Roman', serif;">\( t_{cross}^{v>0} \)</span>
-            are progressively predicted layer by layer using the TRT based on the tokens <span style="font-family: 'KaTeX_Math', 'Times New Roman', serif;">\( t^{0:v-1}_{cross} \)</span> from original layers. (d) Each block in the TMT employs Temporal and Interactive Attention modules to capture temporal dependencies and interactions in the motion sequences. (e) The Interactive Attention module is designed to learn the interactions between the two persons. It primarily consists of self-attention, cross-attention mechanisms, and feedforward network.
+            are progressively predicted layer by layer using the TRT based on the tokens <span style="font-family: 'KaTeX_Math', 'Times New Roman', serif;">\( t^{0:v-1}_{cross} \)</span> from original layers. 
           </p>
         </div>
       </div>
@@ -336,55 +363,69 @@
       <div class="carousel-container">
         <!-- 轮播轨道 - 修改为动态生成克隆项 -->
         <div class="carousel-track">
-          <!-- 原始8个视频（保持唯一ID或data属性便于识别） -->
+          <!-- 原始9个视频（保持唯一ID或data属性便于识别） -->
           <div class="carousel-item" data-original-index="1">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/1.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">They acknowledge each other's presence with a polite greeting.</h2>
+            <h2 class="subtitle has-text-centered">Two humans take a step back and prepare for the assault.</h2>
           </div>
           <div class="carousel-item" data-original-index="2">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">These two people kick each other's calves.</h2>
+            <h2 class="subtitle has-text-centered">One tosses the ball to the other, and the other catches it.</h2>
           </div>
           <div class="carousel-item" data-original-index="3">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">One tosses the ball to the other, and the other catches it.</h2>
+            <h2 class="subtitle has-text-centered">Two people bow to each other.</h2>
           </div>
           <div class="carousel-item" data-original-index="4">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/4.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">They initiate a dance routine that involves swaying shoulders and arms.</h2>
+            <h2 class="subtitle has-text-centered">The first person raises the right leg aggresively towards the second.</h2>
           </div>
           <div class="carousel-item" data-original-index="5">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/5.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">These two people bow to each other.</h2>
+            <h2 class="subtitle has-text-centered">These two people are fencing each other.</h2>
           </div>
           <div class="carousel-item" data-original-index="6">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/6.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">One person strikes the other with a sword and the other dodges.</h2>
+            <h2 class="subtitle has-text-centered">Two humans keep up a forward motion.</h2>
           </div>
           <div class="carousel-item" data-original-index="7">
             <video controls autoplay muted loop style="width:100%;">
               <source src="static/gallery/7.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">Two humans take a step back and prepare for the assault.</h2>
+            <h2 class="subtitle has-text-centered">Two performers approach each other.</h2>
+          </div>
+          <div class="carousel-item" data-original-index="8">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/8.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="subtitle has-text-centered">These two people attacked each other with their legs.</h2>
+          </div>
+          <div class="carousel-item" data-original-index="9">
+            <video controls autoplay muted loop style="width:100%;">
+              <source src="static/gallery/9.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+            <h2 class="subtitle has-text-centered">Two people extend their arms and rotate counterclockwise.</h2>
           </div>
         </div>
         
@@ -392,7 +433,7 @@
         <button class="carousel-arrow carousel-prev" aria-label="Previous">❮</button>
         <button class="carousel-arrow carousel-next" aria-label="Next">❯</button>
         
-        <!-- 指示器 - 更新为8个点 -->
+        
         <div class="carousel-nav" role="tablist">
           <button class="carousel-dot" data-index="0" aria-label="Slide 1" role="tab"></button>
           <button class="carousel-dot" data-index="1" aria-label="Slide 2" role="tab"></button>
@@ -401,6 +442,8 @@
           <button class="carousel-dot" data-index="4" aria-label="Slide 5" role="tab"></button>
           <button class="carousel-dot" data-index="5" aria-label="Slide 6" role="tab"></button>
           <button class="carousel-dot" data-index="6" aria-label="Slide 7" role="tab"></button>
+          <button class="carousel-dot" data-index="7" aria-label="Slide 8" role="tab"></button>
+          <button class="carousel-dot" data-index="8" aria-label="Slide 9" role="tab"></button>
         </div>
       </div>
     </div>
@@ -447,7 +490,7 @@
         </div>
       </div>
       <br>
-      <h2 class="subtitle has-text-centered">Two people <strong>exchange</strong> greetings with a wave of the hand.</h2>
+      <h2 class="subtitle has-text-centered">One person <strong>kicks</strong> the right leg first and then the left leg towards another person</h2>
 
       <br>
       <br>
@@ -483,7 +526,7 @@
         </div>
       </div>
       <br>
-      <h2 class="subtitle has-text-centered">Both they <strong>lower</strong> their arms.</h2>
+      <h2 class="subtitle has-text-centered">One person <strong>greets</strong> with his right hand, while the other person <strong>places</strong> his hands on his chest.</h2>
 
       <br>
       <br>
@@ -519,7 +562,7 @@
         </div>
       </div>
       <br>
-      <h2 class="subtitle has-text-centered">The first person greets the second by raising the <strong>right</strong> arm.</h2>
+      <h2 class="subtitle has-text-centered">Two people <strong>exchange</strong> greetings with a wave of the hand.</h2>
     </div>
   </div>
 </section>
@@ -575,7 +618,7 @@
               <source src="static/edit/vis2.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">One person raises the right leg aggressively towards the other.</h2>
+            <h2 class="subtitle has-text-centered">Two people put their hands on their chests.</h2>
           </div>
         </div>
         <br>
@@ -598,7 +641,7 @@
               <source src="static/edit/vis3.mp4" type="video/mp4">
               Your browser does not support the video tag.
             </video>
-            <h2 class="subtitle has-text-centered">Two person bow to each other.</h2>
+            <h2 class="subtitle has-text-centered">One person opens his arms to another person.</h2>
           </div>
         </div>
       </div>
